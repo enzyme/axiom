@@ -1,0 +1,24 @@
+{
+    "name": "enzyme/axiom",
+    "type": "library",
+    "description": "A set of interfaces for creating DD projects.",
+    "keywords": ["enzyme","axiom","interfaces","ddd","hex","php"],
+    "homepage": "https://github.com/enzyme/axiom",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tristan Strathearn",
+            "email": "r3oath@protonmail.ccom",
+            "homepage": "https://github.com/r3oath",
+            "role": "Full Stack Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "Enzyme\\Axiom\\": "src/"
+        }
+    }
+}
