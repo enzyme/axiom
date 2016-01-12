@@ -11,7 +11,7 @@ class IntAtom implements AtomInterface
     public function __construct($value)
     {
         if (is_numeric($value) === false) {
-            throw new AtomException('IntAtom', $value);
+            throw new AtomException(get_class(), $value);
         }
 
         $this->value = (int) $value;
