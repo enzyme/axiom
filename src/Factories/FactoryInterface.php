@@ -14,7 +14,7 @@ interface FactoryInterface
      *
      * @param CarrierInterface $data
      *
-     * @return InstanceInterface
+     * @return Enzyme\Axiom\Instances\InstanceInterface
      */
     public function make(CarrierInterface $data);
 }

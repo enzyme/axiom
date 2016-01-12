@@ -5,26 +5,25 @@ namespace Enzyme\Axiom\Atoms;
 use Enzyme\Axiom\Exceptions\AtomException;
 
 /**
- * A wrapper around integer values.
+ * A wrapper around boolean values.
  */
-class IntAtom implements AtomInterface
+class BooleanAtom implements AtomInterface
 {
     /**
      * Holds the underlying value.
      *
-     * @var integer
+     * @var string
      */
     protected $value;
 
     /**
-     * Create a new integer atom. Accepts anything numeric and automatically
-     * casts it to an integer.
+     * Create a new boolean atom.
      *
      * @param mixed $value
      */
     public function __construct($value)
     {
-        if (is_numeric($value) === false) {
+        if (is_bool($value) === false) {
             throw new AtomException(get_class(), $value);
         }
 
