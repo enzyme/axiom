@@ -20,5 +20,10 @@
         "psr-4": {
             "Enzyme\\Axiom\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "mockery/mockery": "^0.9.4",
+        "satooshi/php-coveralls": "^0.6.1"
     }
 }
