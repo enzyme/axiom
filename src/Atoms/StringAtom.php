@@ -27,7 +27,7 @@ class StringAtom implements AtomInterface
             throw new AtomException(get_class(), $value);
         }
 
-        $this->value = (int) $value;
+        $this->value = $value;
     }
 
     /**
