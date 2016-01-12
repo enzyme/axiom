@@ -10,7 +10,7 @@ interface InstanceInterface
     /**
      * Get this instance's unique identifier.
      *
-     * @return Enzyme\Axiom\Atoms\IntAtom
+     * @return Enzyme\Axiom\Atoms\IntegerAtom
      */
     public function getId();
 }

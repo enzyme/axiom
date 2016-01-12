@@ -7,7 +7,7 @@ use Enzyme\Axiom\Exceptions\AtomException;
 /**
  * A wrapper around integer values.
  */
-class IntAtom implements AtomInterface
+class IntegerAtom implements AtomInterface
 {
     /**
      * Holds the underlying value.
