@@ -32,8 +32,11 @@
      </whitelist>
    </filter>
    <testsuites>
-      <testsuite name="Atom Test Suite">
+      <testsuite name="Atoms Test Suite">
          <directory>tests/Atoms</directory>
+      </testsuite>
+      <testsuite name="Containers Test Suite">
+         <directory>tests/Containers</directory>
       </testsuite>
    </testsuites>
 </phpunit>
