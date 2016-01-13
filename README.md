@@ -8,7 +8,7 @@ A set of interfaces & classes for creating domain driven projects.
 
 # What is it?
 
-Axiom is a set of PHP interfaces and classes designed to help you flesh out domain driven projects faster. Your project doesn't even necessarily need to be domain driven either; any project that requires a good scalable & maintanable code base can benifit from using the design practices implemented by Axiom. Go nuts!
+Axiom is a set of PHP interfaces and classes designed to help you flesh out domain driven projects faster. Your project doesn't even necessarily need to be domain driven either; any project that requires a scalable & maintanable code base can benifit from using the design practices implemented by Axiom. So go nuts!
 
 # Installation
 
