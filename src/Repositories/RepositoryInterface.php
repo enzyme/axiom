@@ -3,7 +3,7 @@
 namespace Enzyme\Axiom\Repositories;
 
 use Enzyme\Axiom\Instances\InstanceInterface;
-use Enzyme\Axiom\Atoms\IntegerAtom;
+use Enzyme\Axiom\Atoms\AtomInterface;
 
 /**
  * Manages a collection of instances.
@@ -20,11 +20,11 @@ interface RepositoryInterface
     /**
      * Get an instance by the given id.
      *
-     * @param IntAtom $id The instance's id.
+     * @param AtomInterface $id The instance's id.
      *
      * @return Enzyme\Axiom\Instances\InstanceInterface
      */
-    public function getById(IntegerAtom $id);
+    public function getById(AtomInterface $id);
 
     /**
      * Save the given instance to the underlying persistence layer.
