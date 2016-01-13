@@ -12,7 +12,7 @@ class BooleanAtom implements AtomInterface
     /**
      * Holds the underlying value.
      *
-     * @var string
+     * @var boolean
      */
     protected $value;
 
