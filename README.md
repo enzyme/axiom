@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/enzyme/axiom/badge.svg?branch=master&service=github)](https://coveralls.io/github/enzyme/axiom?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/enzyme/axiom/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/enzyme/axiom/?branch=master)
 
-A set of interfaces for creating domain driven projects.
+A set of interfaces & classes for creating domain driven projects.
 
 # Installation
 
