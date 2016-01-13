@@ -20,7 +20,7 @@ interface RepositoryInterface
     /**
      * Get an instance by the given id.
      *
-     * @param IntAtom $id The instance's id.
+     * @param AtomInterface $id The instance's id.
      *
      * @return Enzyme\Axiom\Instances\InstanceInterface
      */
