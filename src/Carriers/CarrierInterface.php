@@ -3,7 +3,7 @@
 namespace Enzyme\Axiom\Carriers;
 
 /**
- * Holds a collection of read-only data for instance creation.
+ * Holds a collection of read-only data for instance creation/modification.
  */
 interface CarrierInterface
 {
