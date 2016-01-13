@@ -35,8 +35,8 @@
       <testsuite name="Atoms Test Suite">
          <directory>tests/Atoms</directory>
       </testsuite>
-      <testsuite name="Containers Test Suite">
-         <directory>tests/Containers</directory>
+      <testsuite name="Reports Test Suite">
+         <directory>tests/Reports</directory>
       </testsuite>
    </testsuites>
 </phpunit>

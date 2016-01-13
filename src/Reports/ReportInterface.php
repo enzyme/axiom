@@ -1,14 +1,14 @@
 <?php
 
-namespace Enzyme\Axiom\Containers;
+namespace Enzyme\Axiom\Reports;
 
 /**
- * Represents a container with a message and optional reasons. Generally
+ * Represents a report with a message and optional details. Generally
  * used to report a failure to the class handling some operation. For example;
  * the validation of user supplied input failed, and we're passing along the
  * reasons why it failed.
  */
-interface BadNewsInterface
+interface ReportInterface
 {
     /**
      * Get the human readable message associated with this container.
@@ -18,17 +18,17 @@ interface BadNewsInterface
     public function getMessage();
 
     /**
-     * Wether this container has some associated reasons that will futher
+     * Wether this report has some associated details that will futher
      * describe why it was returned.
      *
      * @return boolean
      */
-    public function hasReasons();
+    public function hasDetails();
 
     /**
-     * Get the reasons associated with this container.
+     * Get the details associated with this report.
      *
-     * @return mixed
+     * @return array
      */
-    public function getReasons();
+    public function getDetails();
 }
