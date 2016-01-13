@@ -45,8 +45,3 @@ Reports are passed along with certain operations that require some form of well.
 #### Repositories
 
 Repositories form an abstraction of your persistence layer. Classes requesting models from a repository just want the model, they don't care if it came from a database, text file or from memory.
-
-# Roadmap
-- [ ] Finish readme/documentation.
-- [ ] Generate Interface/Class references.
-- [ ] Create first release candidate.
