@@ -1,7 +1,7 @@
 {
     "name": "enzyme/axiom",
     "type": "library",
-    "description": "A set of interfaces for creating DD projects.",
+    "description": "A set of interfaces & classes for creating domain driven projects.",
     "keywords": ["enzyme","axiom","interfaces","ddd","hex","php"],
     "homepage": "https://github.com/enzyme/axiom",
     "license": "MIT",
