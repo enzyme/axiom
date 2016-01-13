@@ -8,6 +8,13 @@ namespace Enzyme\Axiom\Carriers;
 interface CarrierInterface
 {
     /**
+     * Get all the values associated with this carrier.
+     *
+     * @return array
+     */
+    public function getAllValues();
+
+    /**
      * Get the associated value for the given key.
      *
      * @param string $key
