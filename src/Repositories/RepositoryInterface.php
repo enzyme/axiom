@@ -15,7 +15,7 @@ interface RepositoryInterface
      *
      * @return array
      */
-    public function all();
+    public function getAll();
 
     /**
      * Get an instance by the given id.
