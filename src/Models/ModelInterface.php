@@ -12,7 +12,7 @@ interface ModelInterface
      *
      * @return array
      */
-    public function getProperties();
+    public function getAllProperties();
 
     /**
      * Get the value associated with the given property.
