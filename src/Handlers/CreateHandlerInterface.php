@@ -2,7 +2,7 @@
 
 namespace Enzyme\Axiom\Handlers;
 
-use Enzyme\Axiom\Instances\InstanceInterface;
+use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Reports\ReportInterface;
 
 /**
@@ -14,11 +14,11 @@ interface CreateHandlerInterface
     /**
      * Called when the create operation was a success.
      *
-     * @param InstanceInterface $instance The newly created instance.
+     * @param ModelInterface $model The newly created model.
      *
      * @return mixed
      */
-    public function onCreateSuccess(InstanceInterface $instance);
+    public function onCreateSuccess(ModelInterface $model);
 
     /**
      * Called when the create operation was a failure.

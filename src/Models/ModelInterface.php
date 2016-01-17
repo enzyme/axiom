@@ -1,14 +1,14 @@
 <?php
 
-namespace Enzyme\Axiom\Instances;
+namespace Enzyme\Axiom\Models;
 
 /**
- * A model/instance with an unique identifier.
+ * An object representing a model in your domain.
  */
-interface InstanceInterface
+interface ModelInterface
 {
     /**
-     * Get all the properties for this instance.
+     * Get all the properties for this model.
      *
      * @return array
      */
@@ -24,7 +24,7 @@ interface InstanceInterface
     public function getValueFor($property);
 
     /**
-     * Whether this instance has a value for the given property.
+     * Whether this model has a value for the given property.
      *
      * @param mixed $property
      *

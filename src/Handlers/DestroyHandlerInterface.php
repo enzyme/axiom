@@ -2,7 +2,7 @@
 
 namespace Enzyme\Axiom\Handlers;
 
-use Enzyme\Axiom\Instances\InstanceInterface;
+use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Reports\ReportInterface;
 
 /**
@@ -14,11 +14,11 @@ interface DestroyHandlerInterface
     /**
      * Called when the destroy operation was a success.
      *
-     * @param InstanceInterface $instance A copy of the destroyed instance.
+     * @param ModelInterface $model A shallow copy of the destroyed model.
      *
      * @return mixed
      */
-    public function onDestroySuccess(InstanceInterface $instance);
+    public function onDestroySuccess(ModelInterface $model);
 
     /**
      * Called when the destroy operation was a failure.
