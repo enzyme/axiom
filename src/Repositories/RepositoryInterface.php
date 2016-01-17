@@ -27,11 +27,12 @@ interface RepositoryInterface
     public function getById(AtomInterface $id);
 
     /**
-     * Save the given model to the underlying persistence layer.
+     * Save the given model to the underlying persistence layer
+     * and return the model with any new properties set (such as ID).
      *
      * @param ModelInterface $model
      *
-     * @return void
+     * @return \Enzyme\Axiom\Models\ModelInterface
      */
     public function save(ModelInterface $model);
 }
