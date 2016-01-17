@@ -8,9 +8,27 @@ namespace Enzyme\Axiom\Instances;
 interface InstanceInterface
 {
     /**
-     * Get this instance's unique identifier.
+     * Get all the properties for this instance.
+     *
+     * @return array
+     */
+    public function getProperties();
+
+    /**
+     * Get the value associated with the given property.
+     *
+     * @param mixed $property
      *
      * @return mixed
      */
-    public function getId();
+    public function getValueFor($property);
+
+    /**
+     * Whether this instance has a value for the given property.
+     *
+     * @param mixed $property
+     *
+     * @return boolean
+     */
+    public function hasValueFor($property);
 }
