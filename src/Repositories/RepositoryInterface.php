@@ -22,7 +22,7 @@ interface RepositoryInterface
      *
      * @param AtomInterface $id
      *
-     * @return Enzyme\Axiom\Models\ModelInterface
+     * @return \Enzyme\Axiom\Models\ModelInterface
      */
     public function getById(AtomInterface $id);
 

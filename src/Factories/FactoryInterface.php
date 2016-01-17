@@ -15,7 +15,7 @@ interface FactoryInterface
      *
      * @param CarrierInterface $data
      *
-     * @return Enzyme\Axiom\Models\ModelInterface
+     * @return \Enzyme\Axiom\Models\ModelInterface
      */
     public function make(CarrierInterface $data);
 
@@ -25,7 +25,7 @@ interface FactoryInterface
      * @param ModelInterface   $model The model being updated.
      * @param CarrierInterface $data  The new data.
      *
-     * @return Enzyme\Axiom\Models\ModelInterface
+     * @return \Enzyme\Axiom\Models\ModelInterface
      */
     public function update(ModelInterface $model, CarrierInterface $data);
 }
