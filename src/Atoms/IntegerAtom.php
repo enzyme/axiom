@@ -5,7 +5,9 @@ namespace Enzyme\Axiom\Atoms;
 use Enzyme\Axiom\Exceptions\AtomException;
 
 /**
- * A wrapper around integer values.
+ * A wrapper around integer values. Will throw an
+ * \Enzyme\Axiom\Exceptions\AtomException if the value passed during
+ * initialization is not an integer.
  */
 class IntegerAtom implements AtomInterface
 {

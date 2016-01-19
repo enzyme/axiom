@@ -5,7 +5,9 @@ namespace Enzyme\Axiom\Atoms;
 use Enzyme\Axiom\Exceptions\AtomException;
 
 /**
- * A wrapper around string values.
+ * A wrapper around string values. Will throw an
+ * \Enzyme\Axiom\Exceptions\AtomException if the value passed during
+ * initialization is not a string or is a string of length zero.
  */
 class StringAtom implements AtomInterface
 {

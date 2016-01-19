@@ -5,7 +5,9 @@ namespace Enzyme\Axiom\Atoms;
 use Enzyme\Axiom\Exceptions\AtomException;
 
 /**
- * A wrapper around boolean values.
+ * A wrapper around boolean values. Will throw an
+ * \Enzyme\Axiom\Exceptions\AtomException if the value passed during
+ * initialization is not a boolean.
  */
 class BooleanAtom implements AtomInterface
 {
