@@ -1,6 +1,6 @@
 <?php
 
-namespace Enzyme\Axiom\Handlers;
+namespace Enzyme\Axiom\Arbiters;
 
 use Enzyme\Axiom\Reports\ReportInterface;
 use Enzyme\Axiom\Models\ModelInterface;
@@ -9,7 +9,7 @@ use Enzyme\Axiom\Models\ModelInterface;
  * Describes a class that will handle the positive or negative result
  * of a destroy operation.
  */
-interface DestroyHandlerInterface
+interface DestroyArbiterInterface
 {
     /**
      * Called when the destroy operation was a success.
