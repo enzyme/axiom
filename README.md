@@ -28,15 +28,15 @@ Carriers are data containers that hold information generally supplied by the use
 
 #### Factories
 
-Factories are what you'd expect, they simply make instances from the supplied data.
+Factories are what you'd expect, they simply make or update instances from the supplied data.
 
 #### Handlers
 
 Handlers are classes that handle the outcome of a particular operation, either Create, Update or Destroy. If your controller implements the create handler interface and dispatches a create new model command, it can then be notified by the command of the outcome. You'd pass a reference to the handler class to your command or other service doing the reporting.
 
-#### Instances
+#### Models
 
-Instances are just your models that are identified by a unique integer, string etc.
+Models are your domain objects, store data about themselves and their relationships and are identified by a unique integer, string etc.
 
 #### Reports
 
