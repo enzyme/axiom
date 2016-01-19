@@ -2,8 +2,8 @@
 
 namespace Enzyme\Axiom\Handlers;
 
-use Enzyme\Axiom\Instances\InstanceInterface;
 use Enzyme\Axiom\Reports\ReportInterface;
+use Enzyme\Axiom\Models\ModelInterface;
 
 /**
  * Describes a class that will handle the positive or negative result
@@ -14,11 +14,11 @@ interface CreateHandlerInterface
     /**
      * Called when the create operation was a success.
      *
-     * @param InstanceInterface $instance The newly created instance.
+     * @param ModelInterface $model The newly created model.
      *
      * @return mixed
      */
-    public function onCreateSuccess(InstanceInterface $instance);
+    public function onCreateSuccess(ModelInterface $model);
 
     /**
      * Called when the create operation was a failure.

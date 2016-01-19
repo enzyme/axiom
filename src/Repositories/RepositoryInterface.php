@@ -2,36 +2,37 @@
 
 namespace Enzyme\Axiom\Repositories;
 
-use Enzyme\Axiom\Instances\InstanceInterface;
+use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Atoms\AtomInterface;
 
 /**
- * Manages a collection of instances.
+ * Manages a collection of models.
  */
 interface RepositoryInterface
 {
     /**
-     * Get a collection of all instances for this type.
+     * Get a collection of all models for this type.
      *
      * @return array
      */
     public function getAll();
 
     /**
-     * Get an instance by the given id.
+     * Get a model with the given id.
      *
-     * @param AtomInterface $id The instance's id.
+     * @param AtomInterface $id
      *
-     * @return Enzyme\Axiom\Instances\InstanceInterface
+     * @return \Enzyme\Axiom\Models\ModelInterface
      */
     public function getById(AtomInterface $id);
 
     /**
-     * Save the given instance to the underlying persistence layer.
+     * Save the given model to the underlying persistence layer
+     * and return the model with any new properties set (such as ID).
      *
-     * @param InstanceInterface $instance
+     * @param ModelInterface $model
      *
-     * @return void
+     * @return \Enzyme\Axiom\Models\ModelInterface
      */
-    public function save(InstanceInterface $instance);
+    public function save(ModelInterface $model);
 }

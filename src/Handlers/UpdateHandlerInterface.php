@@ -2,8 +2,8 @@
 
 namespace Enzyme\Axiom\Handlers;
 
-use Enzyme\Axiom\Instances\InstanceInterface;
 use Enzyme\Axiom\Reports\ReportInterface;
+use Enzyme\Axiom\Models\ModelInterface;
 
 /**
  * Describes a class that will handle the positive or negative result
@@ -14,11 +14,11 @@ interface UpdateHandlerInterface
     /**
      * Called when the update operation was a success.
      *
-     * @param InstanceInterface $instance The updated instance.
+     * @param ModelInterface $model The updated model.
      *
      * @return mixed
      */
-    public function onUpdateSuccess(InstanceInterface $instance);
+    public function onUpdateSuccess(ModelInterface $model);
 
     /**
      * Called when the update operation was a failure.
