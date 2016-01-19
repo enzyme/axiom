@@ -30,9 +30,9 @@ Carriers are data containers that hold information generally supplied by the use
 
 Factories are what you'd expect, they simply make or update instances from the supplied data.
 
-#### Handlers
+#### Arbiters
 
-Handlers are classes that handle the outcome of a particular operation, either Create, Update or Destroy. If your controller implements the create handler interface and dispatches a create new model command, it can then be notified by the command of the outcome. You'd pass a reference to the handler class to your command or other service doing the reporting.
+Arbiters are classes that spawn and handle the outcome of a particular operation, generally either Create's, Update's or Destroy's. If your controller implements the create arbiter interface and dispatches a create new model command for example, it can then be notified by the command of the outcome (success or failure). You'd pass a reference to the arbiter class to your command or other service doing the reporting.
 
 #### Models
 
