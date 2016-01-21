@@ -1,8 +1,8 @@
 <?php
 
-namespace Enzyme\Factories;
+namespace Enzyme\Axiom\Factories;
 
-use Enzyme\Events\SpawnsEventsInterface;
+use Enzyme\Axiom\Events\SpawnsEventsInterface;
 
 interface EventFactoryInterface extends SpawnsEventsInterface, FactoryInterface
 {

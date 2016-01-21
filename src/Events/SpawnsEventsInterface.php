@@ -1,6 +1,6 @@
 <?php
 
-namespace Enzyme\Events;
+namespace Enzyme\Axiom\Events;
 
 /**
  * Describes a class that may spawn events that will need to be dispatched

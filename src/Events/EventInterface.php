@@ -1,6 +1,6 @@
 <?php
 
-namespace Enzyme\Events;
+namespace Enzyme\Axiom\Events;
 
 interface EventInterface
 {

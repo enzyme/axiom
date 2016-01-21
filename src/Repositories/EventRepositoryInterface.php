@@ -1,8 +1,8 @@
 <?php
 
-namespace Enzyme\Repositories;
+namespace Enzyme\Axiom\Repositories;
 
-use Enzyme\Events\SpawnsEventsInterface;
+use Enzyme\Axiom\Events\SpawnsEventsInterface;
 
 interface EventRepositoryInterface extends SpawnsEventsInterface, RepositoryInterface
 {
