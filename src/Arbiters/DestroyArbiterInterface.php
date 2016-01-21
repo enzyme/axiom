@@ -2,8 +2,8 @@
 
 namespace Enzyme\Axiom\Arbiters;
 
-use Enzyme\Axiom\Reports\ReportInterface;
 use Enzyme\Axiom\Models\ModelInterface;
+use Enzyme\Axiom\Reports\ReportInterface;
 
 /**
  * Describes a class that will handle the positive or negative result

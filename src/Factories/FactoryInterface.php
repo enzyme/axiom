@@ -2,8 +2,8 @@
 
 namespace Enzyme\Axiom\Factories;
 
-use Enzyme\Axiom\Carriers\CarrierInterface;
 use Enzyme\Axiom\Models\ModelInterface;
+use Enzyme\Axiom\Carriers\CarrierInterface;
 
 /**
  * Makes and updates models.

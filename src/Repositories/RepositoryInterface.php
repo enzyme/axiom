@@ -2,8 +2,8 @@
 
 namespace Enzyme\Axiom\Repositories;
 
-use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Atoms\AtomInterface;
+use Enzyme\Axiom\Models\ModelInterface;
 
 /**
  * Manages a collection of models.
