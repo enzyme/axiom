@@ -1,6 +1,6 @@
 <?php
 
-namespace Enzyme\Axiom\Atom;
+namespace Enzyme\Axiom\Atoms;
 
 interface AtomInterface
 {
