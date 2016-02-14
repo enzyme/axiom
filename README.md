@@ -8,7 +8,7 @@ A set of interfaces & classes for creating domain driven projects.
 
 # What is it?
 
-Axiom is a set of PHP interfaces and classes designed to help you flesh out domain driven projects faster. Your project doesn't even necessarily need to be domain driven either; any project that requires a scalable & maintainable code base can benifit from using the design practices implemented by Axiom. So go nuts!
+Axiom is a set of PHP interfaces and classes designed to help you flesh out domain driven projects faster.
 
 # Installation
 
@@ -16,32 +16,53 @@ Axiom is a set of PHP interfaces and classes designed to help you flesh out doma
 composer require enzyme/axiom
 ```
 
-# Breakdown
+# What's included
 
 #### Atoms
+Atoms are wrappers around native php variable types such as int and string. They are used when a service or class expects one of these values and doesn't want to litter the code with type checks such as `if (is_string($var)) {...}`.
 
-Atoms are wrappers around some common native types such as integers, strings and booleans. You'll use atoms when your code expects these types and wants to assume that the value being passed in is already valid. "Valid" in this case being the actual type is correct. So if your models for example are identified by integer ID's, you don't want to be passed the string 'foo'. This saves you from needing to dirty up your code with numerous `if (is_numeric($id)) { ... }` checks etc, you can just get down to business.
+#### Bags
+Bags are used to carry data around the system, whether from the user, an API or an external service.
 
-#### Carriers
-
-Carriers are data containers that hold information generally supplied by the user or an external system. Carriers are passed to factories, repositories, commands etc instead of the raw data object to help decouple your business logic from your inlets. If your factory is using a carrier, it won't care if that carrier was hydrated with data from an API call, an HTML form or a CLI command.
+#### Exceptions
+These exceptions are thrown by the collection of concrete classes included with Axiom when internal errors occur.
 
 #### Factories
-
-Factories are what you'd expect, they simply make or update instances from the supplied data.
-
-#### Arbiters
-
-Arbiters are classes that spawn and handle the outcome of a particular operation, generally either Create's, Update's or Destroy's. If your controller implements the create arbiter interface and dispatches a create new model command for example, it can then be notified by the command of the outcome (success or failure). You'd pass a reference to the arbiter class to your command or other service doing the reporting.
+A factory is responsible for the creation and modification of models. It has intimate knowledge of how a model is built and the various attributes it acquires.
 
 #### Models
+Models are a container that describes a part of your domain. It has attributes and each model is unique.
 
-Models are your domain objects, store data about themselves and their relationships and are identified by a unique integer, string etc.
+#### Recipients
+Recipients are parts of your system that require knowledge of when a model is either successfully or unsuccessfully created, updated or destroyed after they have initiated the action.
 
 #### Reports
-
-Reports are passed along with certain operations that require some form of well... reporting. For example, if the creation of a model fails, you can pass a FailureReport back to the handling class describing what the problem was (maybe the user's input couldn't be validated correctly).
+Reports are containers that carry a message and optional associated details associated with the outcome of some event or action in your domain. For example, when a model failed to be created, a FailureReport can be returned with the details of what went wrong (eg: the user provided data that did not validate).
 
 #### Repositories
+Repositories are collections that allow the system to store and retrieve models. They are the layer that abstracts away the persistence of the models themselves, whether that be to a database, a file or simply in-memory.
 
-Repositories form an abstraction of your persistence layer. Classes requesting models from a repository just want the model, they don't care if it came from a database, text file or from memory.
+# Concrete classes
+There are a couple concrete classes included with Axiom that you can use straight out of the box. These are:
+
+#### Atoms
+* IntegerAtom - represents an integer value. This does not include floats etc.
+* StringAtom - represents a string, either empty or of any size.
+
+#### Bags
+* ArrayBag - simply stores a collection of key->value pairs using an array internally.
+
+#### Reports
+* SimpleReport - provides a basic report implementation that stores a message and optional details.
+* FailureReport - extends the simple report and is purely a means of reporting a failure.
+
+#### Repositories
+* InMemoryRepository - stores a collection of models in-memory using a simple array.
+
+# Contributing
+
+Please see CONTRIBUTING.md
+
+# License
+
+MIT, see LICENSE
