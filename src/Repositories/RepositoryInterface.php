@@ -22,7 +22,7 @@ interface RepositoryInterface
      *
      * @return void
      */
-    public function remove(IntegerAtom $id);
+    public function removeById(IntegerAtom $id);
 
     /**
      * Update the given model with the supplied data.

@@ -5,6 +5,7 @@ namespace Enzyme\Axiom\Repositories;
 use Enzyme\Axiom\Bags\BagInterface;
 use Enzyme\Axiom\Atoms\IntegerAtom;
 use Enzyme\Axiom\Models\ModelInterface;
+use Enzyme\Axiom\Factories\FactoryInterface;
 
 class InMemoryRepository implements RepositoryInterface
 {
@@ -22,7 +23,7 @@ class InMemoryRepository implements RepositoryInterface
         $this->store[$model->identity()] = $model;
     }
 
-    public function remove(IntegerAtom $id)
+    public function removeById(IntegerAtom $id)
     {
         if ($this->has($id)) {
             unset($this->store[$id->getValue()]);
@@ -37,7 +38,9 @@ class InMemoryRepository implements RepositoryInterface
 
     public function getById(IntegerAtom $id)
     {
-        return $this->store[$id->getValue()];
+        return $this->has($id)
+             ? $this->store[$id->getValue()]
+             : null;
     }
 
     public function getAll()
