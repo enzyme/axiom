@@ -28,6 +28,6 @@ class ArrayBag implements BagInterface
     public function has($key)
     {
         return isset($this->store[$key])
-            && array_key_exists($key, $this->store));
+            && array_key_exists($key, $this->store);
     }
 }
