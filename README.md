@@ -37,7 +37,7 @@ Models are a container that describes a part of your domain. It has attributes a
 Recipients are parts of your system that require knowledge of when a model is either successfully or unsuccessfully created, updated or destroyed after they have initiated the action.
 
 #### Reports
-Reports are containers that carry a message and optional associated details associated with the outcome of some event or action in your domain. For example, when a model failed to be created, a FailureReport can be returned with the details of what went wrong (eg: the user provided data that did not validate).
+Reports are containers that carry a message and optional details associated with the outcome of some event or action in your domain. For example, when a model failed to be created, a FailureReport can be returned with the details of what went wrong (eg: the user provided data that did not validate).
 
 #### Repositories
 Repositories are collections that allow the system to store and retrieve models. They are the layer that abstracts away the persistence of the models themselves, whether that be to a database, a file or simply in-memory.
