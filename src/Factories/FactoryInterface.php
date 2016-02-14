@@ -2,30 +2,27 @@
 
 namespace Enzyme\Axiom\Factories;
 
-use Enzyme\Axiom\Carriers\CarrierInterface;
+use Enzyme\Axiom\Bags\BagInterface;
 use Enzyme\Axiom\Models\ModelInterface;
 
-/**
- * Makes and updates models.
- */
 interface FactoryInterface
 {
     /**
-     * Make a new model from the given data.
+     * Make a new model given the data provided.
      *
-     * @param CarrierInterface $data
+     * @param BagInterface $data
      *
      * @return \Enzyme\Axiom\Models\ModelInterface
      */
-    public function make(CarrierInterface $data);
+    public function make(BagInterface $data);
 
     /**
-     * Update the given model with the data provided.
+     * Update the model provided with the given data.
      *
-     * @param ModelInterface   $model The model being updated.
-     * @param CarrierInterface $data  The new data.
+     * @param ModelInterface $model
+     * @param BagInterface   $data
      *
      * @return \Enzyme\Axiom\Models\ModelInterface
      */
-    public function update(ModelInterface $model, CarrierInterface $data);
+    public function update(ModelInterface $model, BagInterface $data);
 }

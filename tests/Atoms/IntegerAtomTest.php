@@ -14,10 +14,6 @@ class IntegerAtomTest extends PHPUnit_Framework_TestCase
         $atom = new IntegerAtom($expected);
         $this->assertEquals($expected, $atom->getValue());
 
-        $expected = 100;
-        $atom = new IntegerAtom(100.5);
-        $this->assertEquals($expected, $atom->getValue());
-
         $expected = PHP_INT_MAX;
         $atom = new IntegerAtom($expected);
         $this->assertEquals($expected, $atom->getValue());
@@ -29,5 +25,13 @@ class IntegerAtomTest extends PHPUnit_Framework_TestCase
     public function test_atom_throws_exception_when_initialised_with_invalid_value()
     {
         new IntegerAtom('foobar');
+    }
+
+    /**
+     * @expectedException \Enzyme\Axiom\Exceptions\AtomException
+     */
+    public function test_atom_throws_exception_when_initialised_with_floating_value()
+    {
+        new IntegerAtom(100.5);
     }
 }

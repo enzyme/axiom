@@ -2,37 +2,60 @@
 
 namespace Enzyme\Axiom\Repositories;
 
+use Enzyme\Axiom\Bags\BagInterface;
+use Enzyme\Axiom\Atoms\IntegerAtom;
 use Enzyme\Axiom\Models\ModelInterface;
-use Enzyme\Axiom\Atoms\AtomInterface;
 
-/**
- * Manages a collection of models.
- */
 interface RepositoryInterface
 {
     /**
-     * Get a collection of all models for this type.
+     * Add the given model to the repository.
+     *
+     * @param ModelInterface $model
+     */
+    public function add(ModelInterface $model);
+
+    /**
+     * Remove the model with the given ID from the repository.
+     *
+     * @param IntegerAtom $id
+     *
+     * @return void
+     */
+    public function removeById(IntegerAtom $id);
+
+    /**
+     * Update the given model with the supplied data.
+     *
+     * @param ModelInterface $model
+     * @param BagInterface   $data
+     *
+     * @return \Enzyme\Axiom\Models\ModelInterface
+     */
+    public function update(ModelInterface $model, BagInterface $data);
+
+    /**
+     * Get the model associated with the given ID.
+     *
+     * @param IntegerAtom $id
+     *
+     * @return \Enzyme\Axiom\Models\ModelInterface
+     */
+    public function getById(IntegerAtom $id);
+
+    /**
+     * Get all models from this repository.
      *
      * @return array
      */
     public function getAll();
 
     /**
-     * Get a model with the given id.
+     * Check whether this repository has a model associated with the given ID.
      *
-     * @param AtomInterface $id
+     * @param IntegerAtom $id
      *
-     * @return \Enzyme\Axiom\Models\ModelInterface
+     * @return boolean
      */
-    public function getById(AtomInterface $id);
-
-    /**
-     * Save the given model to the underlying persistence layer
-     * and return the model with any new properties set (such as ID).
-     *
-     * @param ModelInterface $model
-     *
-     * @return \Enzyme\Axiom\Models\ModelInterface
-     */
-    public function save(ModelInterface $model);
+    public function has(IntegerAtom $id);
 }

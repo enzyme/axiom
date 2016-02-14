@@ -35,8 +35,14 @@
       <testsuite name="Atoms Test Suite">
          <directory>tests/Atoms</directory>
       </testsuite>
+      <testsuite name="Bags Test Suite">
+         <directory>tests/Bags</directory>
+      </testsuite>
       <testsuite name="Reports Test Suite">
          <directory>tests/Reports</directory>
+      </testsuite>
+      <testsuite name="Repositories Test Suite">
+         <directory>tests/Repositories</directory>
       </testsuite>
    </testsuites>
 </phpunit>

@@ -13,6 +13,10 @@ class StringAtomTest extends PHPUnit_Framework_TestCase
         $expected = '25';
         $atom = new StringAtom($expected);
         $this->assertEquals($expected, $atom->getValue());
+
+        $expected = '';
+        $atom = new StringAtom($expected);
+        $this->assertEquals($expected, $atom->getValue());
     }
 
     /**
@@ -21,13 +25,5 @@ class StringAtomTest extends PHPUnit_Framework_TestCase
     public function test_atom_throws_exception_when_initialised_with_invalid_value()
     {
         new StringAtom(5);
-    }
-
-    /**
-     * @expectedException \Enzyme\Axiom\Exceptions\AtomException
-     */
-    public function test_atom_throws_exception_when_initialised_with_empty_string()
-    {
-        new StringAtom('');
     }
 }

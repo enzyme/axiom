@@ -2,7 +2,7 @@
 
 namespace Enzyme\Axiom\Reports;
 
-class FailureReport extends GenericReport
+class FailureReport extends SimpleReport
 {
     //
 }

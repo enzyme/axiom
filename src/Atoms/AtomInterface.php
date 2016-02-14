@@ -2,13 +2,10 @@
 
 namespace Enzyme\Axiom\Atoms;
 
-/**
- * Provides a wrapper around native types.
- */
 interface AtomInterface
 {
     /**
-     * Get the underlying native value for this atom.
+     * Get the underlying value associated with this atom.
      *
      * @return mixed
      */

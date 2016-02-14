@@ -2,17 +2,12 @@
 
 namespace Enzyme\Axiom\Exceptions;
 
-use Exception;
-
-/**
- * Thrown when an atom cannot process the given value.
- */
-class AtomException extends Exception
+class AtomException extends AxiomException
 {
-    public function __construct($atom_type, $value)
+    public function __construct($class, $value)
     {
         parent::__construct(
-            "The atom '{$atom_type}' does not support the value '{$value}'."
+            "The atom [{$class}] could not process the value [{$value}]."
         );
     }
 }

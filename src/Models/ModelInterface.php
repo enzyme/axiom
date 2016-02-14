@@ -2,33 +2,37 @@
 
 namespace Enzyme\Axiom\Models;
 
-/**
- * An object representing a model in your domain.
- */
 interface ModelInterface
 {
     /**
-     * Get all the properties for this model.
+     * Get the unique identity for this mode.
      *
-     * @return array
+     * @return int
      */
-    public function getAllProperties();
+    public function identity();
 
     /**
-     * Get the value associated with the given property.
+     * Checks whether this model has the given attribute set.
      *
-     * @param mixed $property
-     *
-     * @return mixed
-     */
-    public function getValueFor($property);
-
-    /**
-     * Whether this model has a value for the given property.
-     *
-     * @param mixed $property
+     * @param string $attribute
      *
      * @return boolean
      */
-    public function hasValueFor($property);
+    public function hasAttribute($attribute);
+
+    /**
+     * Get the value associated with the given attribute.
+     *
+     * @param string $attribute
+     *
+     * @return mixed
+     */
+    public function getAttribute($attribute);
+
+    /**
+     * Get all the attributes associated with this model.
+     *
+     * @return array
+     */
+    public function getAllAttributes();
 }
