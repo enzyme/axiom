@@ -5,7 +5,7 @@ namespace Enzyme\Axiom\Recipients;
 use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Reports\ReportInterface;
 
-interface CreateRecipientInterface
+interface OnCreateRecipientInterface
 {
     /**
      * Called when the creation of a model was a success.
