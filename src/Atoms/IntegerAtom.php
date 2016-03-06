@@ -10,7 +10,7 @@ class IntegerAtom implements AtomInterface
 
     public function __construct($value)
     {
-        if (is_integer((int) $value) === false) {
+        if ($this->isInvalidOrFloat($value)) {
             throw new AtomException(get_class($this), $value);
         }
 
@@ -20,5 +20,10 @@ class IntegerAtom implements AtomInterface
     public function getValue()
     {
         return $this->value;
+    }
+
+    protected function isInvalidOrFloat($value)
+    {
+        return is_numeric($value) === false || is_float($value) === true;
     }
 }
