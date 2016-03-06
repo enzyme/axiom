@@ -18,7 +18,7 @@ interface ModelInterface
      *
      * @return boolean
      */
-    public function hasAttribute($attribute);
+    public function has($attribute);
 
     /**
      * Get the value associated with the given attribute.
@@ -27,12 +27,12 @@ interface ModelInterface
      *
      * @return mixed
      */
-    public function getAttribute($attribute);
+    public function get($attribute);
 
     /**
      * Get all the attributes associated with this model.
      *
      * @return array
      */
-    public function getAllAttributes();
+    public function getAll();
 }
