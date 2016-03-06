@@ -10,7 +10,7 @@ class IntegerAtom implements AtomInterface
 
     public function __construct($value)
     {
-        if (is_integer($value) === false) {
+        if (is_integer((int) $value) === false) {
             throw new AtomException(get_class($this), $value);
         }
 
