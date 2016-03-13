@@ -3,7 +3,7 @@
 namespace Enzyme\Axiom\Repositories;
 
 use Enzyme\Axiom\Bags\BagInterface;
-use Enzyme\Axiom\Atoms\IntegerAtom;
+use Enzyme\Axiom\Atoms\AtomInterface;
 use Enzyme\Axiom\Models\ModelInterface;
 
 interface RepositoryInterface
@@ -18,11 +18,11 @@ interface RepositoryInterface
     /**
      * Remove the model with the given ID from the repository.
      *
-     * @param IntegerAtom $id
+     * @param AtomInterface $id
      *
      * @return void
      */
-    public function removeById(IntegerAtom $id);
+    public function removeById(AtomInterface $id);
 
     /**
      * Update the given model with the supplied data.
@@ -37,11 +37,11 @@ interface RepositoryInterface
     /**
      * Get the model associated with the given ID.
      *
-     * @param IntegerAtom $id
+     * @param AtomInterface $id
      *
      * @return \Enzyme\Axiom\Models\ModelInterface
      */
-    public function getById(IntegerAtom $id);
+    public function getById(AtomInterface $id);
 
     /**
      * Get all models from this repository.
@@ -53,9 +53,9 @@ interface RepositoryInterface
     /**
      * Check whether this repository has a model associated with the given ID.
      *
-     * @param IntegerAtom $id
+     * @param AtomInterface $id
      *
      * @return boolean
      */
-    public function has(IntegerAtom $id);
+    public function has(AtomInterface $id);
 }
