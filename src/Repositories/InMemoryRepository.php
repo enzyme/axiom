@@ -3,7 +3,7 @@
 namespace Enzyme\Axiom\Repositories;
 
 use Enzyme\Axiom\Bags\BagInterface;
-use Enzyme\Axiom\Atoms\IntegerAtom;
+use Enzyme\Axiom\Atoms\AtomInterface;
 use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Factories\FactoryInterface;
 
@@ -23,7 +23,7 @@ class InMemoryRepository implements RepositoryInterface
         $this->store[$model->identity()] = $model;
     }
 
-    public function removeById(IntegerAtom $id)
+    public function removeById(AtomInterface $id)
     {
         if ($this->has($id)) {
             unset($this->store[$id->getValue()]);
@@ -36,7 +36,7 @@ class InMemoryRepository implements RepositoryInterface
         $this->store[$model->identity()] = $updated_model;
     }
 
-    public function getById(IntegerAtom $id)
+    public function getById(AtomInterface $id)
     {
         return $this->has($id)
              ? $this->store[$id->getValue()]
@@ -48,7 +48,7 @@ class InMemoryRepository implements RepositoryInterface
         return $this->store;
     }
 
-    public function has(IntegerAtom $id)
+    public function has(AtomInterface $id)
     {
         return isset($this->store[$id->getValue()])
             && array_key_exists($id->getValue(), $this->store);
