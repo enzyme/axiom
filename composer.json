@@ -14,11 +14,14 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0"
+        "php": ">=5.5.0",
+        "symfony/console": "^3.0",
+        "enzyme/parrot": "^0.0.1"
     },
     "autoload": {
         "psr-4": {
-            "Enzyme\\Axiom\\": "src/"
+            "Enzyme\\Axiom\\": "src/",
+            "Enzyme\\Axiom\\Console\\": "console/"
         }
     },
     "require-dev": {
