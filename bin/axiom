@@ -36,4 +36,5 @@ $config->parse('axiom.yaml');
 
 $application = new Application();
 $application->add(new Commands\MakeRepositoryCommand($stub_manager));
+$application->add(new Commands\MakeFactoryCommand($stub_manager));
 $application->run();
