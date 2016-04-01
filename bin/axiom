@@ -22,11 +22,17 @@ if (false === defined('COMPOSER_AUTOLOAD_LOCATION')) {
 require_once COMPOSER_AUTOLOAD_LOCATION;
 
 use Enzyme\Parrot\File;
+use Enzyme\Axiom\Console\Config;
 use Enzyme\Axiom\Console\Commands;
+use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Console\Application;
 use Enzyme\Axiom\Console\Stubs\Manager as StubManager;
 
+$parser = new Parser;
+$config = new Config($parser, new File);
 $stub_manager = new StubManager(new File);
+
+$config->parse('axiom.yaml');
 
 $application = new Application();
 $application->add(new Commands\MakeRepositoryCommand($stub_manager));
