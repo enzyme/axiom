@@ -70,8 +70,6 @@ class Config
                 "The yaml configuration file [$file] is invalid."
             );
         }
-
-        $this->setupStore();
     }
 
     /**
@@ -84,25 +82,7 @@ class Config
      */
     public function get($key)
     {
-        if (false === isset($this->store[$key])
-            && false === array_key_exists($key, $this->store)) {
-            return null;
-        }
-
-        return $this->store[$key];
-    }
-
-    /**
-     * Setup the internal configuration store.
-     */
-    protected function setupStore()
-    {
-        $this->store = [
-            'repositories.namespace' => $this->dotGet($this->config, 'repositories.namespace'),
-            'factories.namespace'    => $this->dotGet($this->config, 'factories.namespace'),
-            'repositories.location'  => $this->dotGet($this->config, 'repositories.location'),
-            'factories.location'     => $this->dotGet($this->config, 'factories.location')
-        ];
+        return $this->dotGet($this->config, $key);
     }
 
     /**
