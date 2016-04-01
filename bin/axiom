@@ -1,18 +1,25 @@
 #!/usr/bin/env php
 <?php
 
+// A collection of locations where the composer autoload file may be present
+// relative to our current working directory.
 $autoload_locations = [
     __DIR__ . '/../../autoload.php',
     __DIR__ . '/../vendor/autoload.php',
     __DIR__ . '/vendor/autoload.php'
 ];
 
+// If we find a composer autoload file, set the location as a global constant,
+// otherwise fail and notify the user.
 foreach ($autoload_locations as $file) {
     if (file_exists($file) === true) {
         define('COMPOSER_AUTOLOAD_LOCATION', $file);
 
         break;
     }
+}
+if (false === defined('COMPOSER_AUTOLOAD_LOCATION')) {
+    throw new \Exception('Composer autoload.php could not be found.');
 }
 
 require_once COMPOSER_AUTOLOAD_LOCATION;
