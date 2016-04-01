@@ -13,6 +13,7 @@ class BaseCommand extends Command
 {
     protected $stub_manager;
     protected $namespace;
+    protected $location;
 
     public function __construct(StubManager $stub_manager)
     {
