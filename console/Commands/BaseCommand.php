@@ -46,4 +46,12 @@ class BaseCommand extends Command
 
         $this->location = $input->getArgument('location');
     }
+
+    protected function printResults($output, $model, $type)
+    {
+        $output->writeln("<info>$type created for model [$model]</info>");
+        $output->writeln("<comment>    Namespace -> $this->namespace</comment>");
+        $output->writeln("<comment>        Class -> {$model}Repository</comment>");
+        $output->writeln("<comment>     Location -> $this->location</comment>");
+    }
 }

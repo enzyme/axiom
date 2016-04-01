@@ -38,9 +38,6 @@ class MakeRepositoryCommand extends BaseCommand
 
         $this->stub_manager->writeOut($contents, $this->location);
 
-        $output->writeln("<info>Repository created for model $model</info>");
-        $output->writeln("<comment>\tNamespace -> $this->namespace</comment>");
-        $output->writeln("<comment>\tClass -> {$model}Repository</comment>");
-        $output->writeln("<comment>\tLocation -> $this->location</comment>");
+        $this->printResults($output, $model, 'Repository');
     }
 }
