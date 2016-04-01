@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+$autoload_locations = [
+    __DIR__ . '/../../autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/vendor/autoload.php'
+];
+
+foreach ($autoload_locations as $file) {
+    if (file_exists($file) === true) {
+        define('COMPOSER_AUTOLOAD_LOCATION', $file);
+
+        break;
+    }
+}
+
+require_once COMPOSER_AUTOLOAD_LOCATION;
+
+use Enzyme\Parrot\File;
+use Enzyme\Axiom\Console\Commands;
+use Symfony\Component\Console\Application;
+use Enzyme\Axiom\Console\Stubs\Manager as StubManager;
+
+$stub_manager = new StubManager(new File);
+
+$application = new Application();
+$application->add(new Commands\MakeRepositoryCommand($stub_manager));
+$application->run();
