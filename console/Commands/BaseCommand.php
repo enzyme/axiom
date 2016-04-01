@@ -47,13 +47,20 @@ class BaseCommand extends Command
         $this->location = $input->getArgument('location');
     }
 
-    protected function printResults($output, $model, $type)
+    /**
+     * Print the generation results to the console window.
+     *
+     * @param OutputInterface $output
+     * @param string          $model The domain model.
+     * @param string          $type  The generation type, eg: Factory.
+     */
+    protected function printResults(OutputInterface $output, $model, $type)
     {
         $output->writeln("<info>$type created for model [$model]</info>");
 
         if (true === $output->isVerbose()) {
             $output->writeln("<comment>    Namespace -> $this->namespace</comment>");
-            $output->writeln("<comment>        Class -> {$model}Repository</comment>");
+            $output->writeln("<comment>        Class -> {$model}{$type}</comment>");
             $output->writeln("<comment>     Location -> $this->location</comment>");
         }
     }
