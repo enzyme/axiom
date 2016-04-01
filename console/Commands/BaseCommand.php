@@ -14,8 +14,25 @@ use Enzyme\Axiom\Console\Stubs\Manager as StubManager;
 
 abstract class BaseCommand extends Command
 {
+    /**
+     * Reference to the stub manager.
+     *
+     * @var Enzyme\Axiom\Console\Stubs\Manager
+     */
     protected $stub_manager;
+
+    /**
+     * The namespace this generated class falls under.
+     *
+     * @var string
+     */
     protected $namespace;
+
+    /**
+     * The location this generated class will be saved at.
+     *
+     * @var string
+     */
     protected $location;
 
     public function __construct(StubManager $stub_manager, Config $config)
@@ -26,8 +43,16 @@ abstract class BaseCommand extends Command
         $this->config = $config;
     }
 
+    /**
+     * The generator type this class is handling, eg: "factory".
+     *
+     * @return string
+     */
     abstract protected function getGeneratorType();
 
+    /**
+     * {@inheritDoc}
+     */
     protected function configure()
     {
         $generator_type = $this->getGeneratorType();
@@ -54,6 +79,9 @@ abstract class BaseCommand extends Command
             );
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $inflector = Inflector::get(Inflector::DEFAULT_LOCALE);
@@ -80,6 +108,14 @@ abstract class BaseCommand extends Command
         }
     }
 
+    /**
+     * Execute a generation command, aka make a single usuable Axiom class.
+     *
+     * @param InputInterface  $input
+     * @param OutputInterface $output
+     * @param bool            $dont_affix_type If true, don't add the type to
+     *                        the generated class name and file.
+     */
     protected function executeGeneration(
         InputInterface $input,
         OutputInterface $output
@@ -109,8 +145,7 @@ abstract class BaseCommand extends Command
      * Print the generation results to the console window.
      *
      * @param OutputInterface $output
-     * @param string          $model The domain model.
-     * @param string          $type  The generation type, eg: Factory.
+     * @param string          $name The name prefix of the generated class.
      */
     protected function printResults(OutputInterface $output, $model)
     {
