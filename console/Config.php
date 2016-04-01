@@ -47,6 +47,7 @@ class Config
     {
         $this->parser = $parser;
         $this->file_dispatch = $file_dispatch;
+        $this->store = [];
     }
 
     /**
@@ -60,9 +61,8 @@ class Config
             return;
         }
 
-        $parsed_config = null;
         try {
-            $parsed_config = $this->parser->parse(
+            $this->config = $this->parser->parse(
                 $this->file_dispatch->getContents($file)
             );
         } catch (ParseException $e) {
@@ -71,7 +71,6 @@ class Config
             );
         }
 
-        $this->config = $parsed_config;
         $this->setupStore();
     }
 
@@ -85,7 +84,12 @@ class Config
      */
     public function get($key)
     {
-        return $this->extract($this->store, $key, null);
+        if (false === isset($this->store[$key])
+            && false === array_key_exists($key, $this->store)) {
+            return null;
+        }
+
+        return $this->store[$key];
     }
 
     /**
@@ -94,55 +98,11 @@ class Config
     protected function setupStore()
     {
         $this->store = [
-            'namespaces' => $this->getStoreNamespaces(),
-            'locations' => $this->getStoreLocations(),
+            'repositories.namespace' => $this->dotGet($this->config, 'repositories.namespace'),
+            'factories.namespace'    => $this->dotGet($this->config, 'factories.namespace'),
+            'repositories.location'  => $this->dotGet($this->config, 'repositories.location'),
+            'factories.location'     => $this->dotGet($this->config, 'factories.location')
         ];
-    }
-
-    /**
-     * Return an array of store namespaces.
-     *
-     * @return array
-     */
-    protected function getStoreNamespaces()
-    {
-        return [
-            'repository' => $this->dotGet($this->config, 'repositories.namespace'),
-            'factory'    => $this->dotGet($this->config, 'factories.namespace'),
-        ];
-    }
-
-    /**
-     * Return an array of store locations.
-     *
-     * @return array
-     */
-    protected function getStoreLocations()
-    {
-        return [
-            'repository' => $this->dotGet($this->config, 'repositories.location'),
-            'factory'    => $this->dotGet($this->config, 'factories.location'),
-        ];
-    }
-
-    /**
-     * Extract the given key from the array and return its value. If the
-     * key does not exist, return the default value instead.
-     *
-     * @param array  $data
-     * @param string $key
-     * @param mixed  $default
-     *
-     * @return mixed
-     */
-    protected function extract($data, $key, $default)
-    {
-        if (false === isset($data[$key])
-            && false === array_key_exists($key, $data)) {
-            return $default;
-        }
-
-        return $data[$key];
     }
 
     /**
