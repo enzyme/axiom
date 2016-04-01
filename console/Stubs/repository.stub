@@ -6,8 +6,9 @@ use Enzyme\Axiom\Bags\BagInterface;
 use Enzyme\Axiom\Atoms\AtomInterface;
 use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Factories\FactoryInterface;
+use Enzyme\Axiom\Repositories\RepositoryInterface;
 
-class %uc_model%Repository implements RepositoryInterface
+class %model%Repository implements RepositoryInterface
 {
     protected $factory;
 
