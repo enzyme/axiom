@@ -1,0 +1,21 @@
+<?php
+
+namespace %namespace%;
+
+use Enzyme\Axiom\Atoms\AtomInterface;
+use Enzyme\Axiom\Exceptions\AtomException;
+
+class %name%Atom implements AtomInterface
+{
+    protected $value;
+
+    public function __construct($value)
+    {
+        //
+    }
+
+    public function getValue()
+    {
+        return $this->value;
+    }
+}

@@ -1,0 +1,28 @@
+<?php
+
+namespace Enzyme\Axiom\Models;
+
+use Enzyme\Axiom\Models\ModelInterface;
+
+class %name% implements ModelInterface
+{
+    public function identity()
+    {
+        //
+    }
+
+    public function has($attribute)
+    {
+        //
+    }
+
+    public function get($attribute)
+    {
+        //
+    }
+
+    public function getAll()
+    {
+        //
+    }
+}

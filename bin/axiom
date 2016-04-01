@@ -55,6 +55,11 @@ $stub_manager = new StubManager(new File);
 $config->parse(AXIOM_YAML_LOCATION);
 
 $application = new Application();
-$application->add(new Commands\MakeRepositoryCommand($stub_manager, $config));
+$application->add(new Commands\MakeBagCommand($stub_manager, $config));
+$application->add(new Commands\MakeAtomCommand($stub_manager, $config));
+$application->add(new Commands\MakeModelCommand($stub_manager, $config));
+$application->add(new Commands\MakeStackCommand($stub_manager, $config));
+$application->add(new Commands\MakeReportCommand($stub_manager, $config));
 $application->add(new Commands\MakeFactoryCommand($stub_manager, $config));
+$application->add(new Commands\MakeRepositoryCommand($stub_manager, $config));
 $application->run();
