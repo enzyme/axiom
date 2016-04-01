@@ -33,7 +33,7 @@ class MakeRepositoryCommand extends BaseCommand
         $contents = $this->stub_manager->get('repository');
         $contents = $this->stub_manager->hydrate($contents, [
             'namespace' => $this->namespace,
-            'uc_model'  => $model,
+            'model'     => $model,
         ]);
 
         $this->stub_manager->writeOut($contents, $this->location);
