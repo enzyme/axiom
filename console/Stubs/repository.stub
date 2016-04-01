@@ -8,7 +8,7 @@ use Enzyme\Axiom\Models\ModelInterface;
 use Enzyme\Axiom\Factories\FactoryInterface;
 use Enzyme\Axiom\Repositories\RepositoryInterface;
 
-class %model%Repository implements RepositoryInterface
+class %name%Repository implements RepositoryInterface
 {
     protected $factory;
 

@@ -120,13 +120,13 @@ abstract class BaseCommand extends Command
         InputInterface $input,
         OutputInterface $output
     ) {
-        $uc_model = ucfirst($input->getArgument('model'));
+        $uc_name = ucfirst($input->getArgument('name'));
         $uc_type = ucfirst($this->getGeneratorType());
 
         $contents = $this->stub_manager->get($this->getGeneratorType());
         $contents = $this->stub_manager->hydrate($contents, [
             'namespace' => $this->namespace,
-            'model'     => $uc_model,
+            'name'      => $uc_name,
         ]);
 
         $this->stub_manager->writeOut(
