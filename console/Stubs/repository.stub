@@ -1,0 +1,48 @@
+<?php
+
+namespace %namespace%;
+
+use Enzyme\Axiom\Bags\BagInterface;
+use Enzyme\Axiom\Atoms\AtomInterface;
+use Enzyme\Axiom\Models\ModelInterface;
+use Enzyme\Axiom\Factories\FactoryInterface;
+
+class %uc_model%Repository implements RepositoryInterface
+{
+    protected $factory;
+
+    public function __construct(FactoryInterface $factory)
+    {
+        $this->factory = $factory;
+    }
+
+    public function add(ModelInterface $model)
+    {
+        //
+    }
+
+    public function removeById(AtomInterface $id)
+    {
+        //
+    }
+
+    public function update(ModelInterface $model, BagInterface $data)
+    {
+        //
+    }
+
+    public function getById(AtomInterface $id)
+    {
+        //
+    }
+
+    public function getAll()
+    {
+        //
+    }
+
+    public function has(AtomInterface $id)
+    {
+        //
+    }
+}
