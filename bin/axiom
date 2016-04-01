@@ -4,9 +4,7 @@
 // A collection of locations where the composer autoload file may be present
 // relative to our current working directory.
 $autoload_locations = [
-    __DIR__ . '/../../autoload.php',
     __DIR__ . '/../vendor/autoload.php',
-    __DIR__ . '/vendor/autoload.php'
 ];
 
 // If we find a composer autoload file, set the location as a global constant,
@@ -14,7 +12,6 @@ $autoload_locations = [
 foreach ($autoload_locations as $file) {
     if (file_exists($file) === true) {
         define('COMPOSER_AUTOLOAD_LOCATION', $file);
-
         break;
     }
 }
