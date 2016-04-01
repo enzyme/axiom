@@ -59,11 +59,11 @@ abstract class BaseCommand extends Command
 
         $this
             ->setName("make:{$generator_type}")
-            ->setDescription("Make a new $generator_type.")
+            ->setDescription("Make a new {$generator_type}.")
             ->addArgument(
-                'model',
+                'name',
                 InputArgument::REQUIRED,
-                "The name of the domain model to generate the $generator_type for."
+                "The name prefix on the generated {$generator_type}, eg: \"user\""
             )
             ->addOption(
                 'location',
@@ -118,7 +118,8 @@ abstract class BaseCommand extends Command
      */
     protected function executeGeneration(
         InputInterface $input,
-        OutputInterface $output
+        OutputInterface $output,
+        $dont_affix_type = false
     ) {
         $uc_name = ucfirst($input->getArgument('name'));
         $uc_type = ucfirst($this->getGeneratorType());
@@ -129,15 +130,16 @@ abstract class BaseCommand extends Command
             'name'      => $uc_name,
         ]);
 
-        $this->stub_manager->writeOut(
-            $contents,
-            "{$this->location}/{$uc_model}{$uc_type}.php"
-        );
+        $out_file = $dont_affix_type === true
+            ? "{$this->location}/{$uc_name}.php"
+            : "{$this->location}/{$uc_name}{$uc_type}.php";
+
+        $this->stub_manager->writeOut($contents, $out_file);
 
         $this->printResults(
             $output,
-            $uc_model,
-            ucfirst($this->getGeneratorType())
+            $uc_name,
+            $dont_affix_type
         );
     }
 
@@ -147,15 +149,22 @@ abstract class BaseCommand extends Command
      * @param OutputInterface $output
      * @param string          $name The name prefix of the generated class.
      */
-    protected function printResults(OutputInterface $output, $model)
-    {
+    protected function printResults(
+        OutputInterface $output,
+        $name,
+        $dont_affix_type = false
+    ) {
         $uc_type = ucfirst($this->getGeneratorType());
-        $output->writeln("<info>$uc_type created for model [$model]</info>");
+        $output->writeln("<info>{$uc_type} created for [{$name}]</info>");
+
+        $class = $dont_affix_type === true
+            ? $name
+            : $name.$uc_type;
 
         if (true === $output->isVerbose()) {
-            $output->writeln("<comment>    Namespace -> $this->namespace</comment>");
-            $output->writeln("<comment>        Class -> {$model}{$uc_type}</comment>");
-            $output->writeln("<comment>     Location -> $this->location</comment>");
+            $output->writeln("<comment>    Namespace -> {$this->namespace}</comment>");
+            $output->writeln("<comment>        Class -> {$class}</comment>");
+            $output->writeln("<comment>     Location -> {$this->location}</comment>");
         }
     }
 }
