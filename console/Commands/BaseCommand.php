@@ -41,7 +41,9 @@ class BaseCommand extends Command
     {
         $this->namespace = $input->getOption('namespace');
         if (null === $this->namespace) {
-            $this->namespace = '// to be completed';
+            $this->namespace = "App\\{$this->namespace_affix}";
         }
+
+        $this->location = $input->getArgument('location');
     }
 }

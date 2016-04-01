@@ -8,6 +8,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class MakeRepositoryCommand extends BaseCommand
 {
+    protected $namespace_affix = 'Repositories';
+
     protected function configure()
     {
         parent::configure();
