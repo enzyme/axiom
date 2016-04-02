@@ -78,6 +78,10 @@ class Config
      */
     public function get($key)
     {
+        if (count($this->config) < 1) {
+            return null;
+        }
+
         return $this->dotGet($this->config, $key);
     }
 
