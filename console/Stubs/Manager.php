@@ -27,7 +27,7 @@ class Manager
      */
     public function __construct(File $file_dispatch)
     {
-        $this->stubs_dir = __DIR__.'/';
+        $this->stubs_dir = __DIR__ . '/';
         $this->file_dispatch = $file_dispatch;
     }
 
