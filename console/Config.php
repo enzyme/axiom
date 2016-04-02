@@ -62,7 +62,7 @@ class Config
                 $this->config = $results;
             }
         } catch (ParseException $e) {
-            throw new InvalidArgumentException(
+            throw new Exception(
                 "The yaml configuration file [$file] is invalid."
             );
         }
