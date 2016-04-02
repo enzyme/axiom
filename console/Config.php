@@ -54,9 +54,13 @@ class Config
         }
 
         try {
-            $this->config = $this->parser->parse(
+            $results = $this->parser->parse(
                 $this->file_dispatch->getContents($file)
             );
+
+            if (true === is_array($results)) {
+                $this->config = $results;
+            }
         } catch (ParseException $e) {
             throw new InvalidArgumentException(
                 "The yaml configuration file [$file] is invalid."
