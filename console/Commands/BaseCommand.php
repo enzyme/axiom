@@ -16,7 +16,7 @@ abstract class BaseCommand extends Command
     /**
      * Reference to the stub manager.
      *
-     * @var Enzyme\Axiom\Console\Stubs\Manager
+     * @var \Enzyme\Axiom\Console\Stubs\Manager
      */
     protected $stub_manager;
 
@@ -37,15 +37,15 @@ abstract class BaseCommand extends Command
     /**
      * The global configuration manager.
      *
-     * @var Enzyme\Axiom\Console\Config
+     * @var \Enzyme\Axiom\Console\Config
      */
     protected $config;
 
     /**
      * Instantiate a new command.
      *
-     * @param Enzyme\Axiom\Console\Stubs\Manager $stub_manager
-     * @param Enzyme\Axiom\Console\Config        $config
+     * @param \Enzyme\Axiom\Console\Stubs\Manager $stub_manager
+     * @param \Enzyme\Axiom\Console\Config        $config
      */
     public function __construct(StubManager $stub_manager, Config $config)
     {
@@ -123,12 +123,14 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * Execute a generation command, aka make a single usuable Axiom class.
+     * Execute a generation command - make a single usuable Axiom class. If
+     * $dont_affix_type is true, do not add the class type to the end of the
+     * name, this is useful for models which generally are just named as they
+     * are and don't have "Model" affixed, eg: "User", not "UserModel".
      *
-     * @param InputInterface  $input
-     * @param OutputInterface $output
-     * @param bool            $dont_affix_type If true, don't add the type to
-     *                        the generated class name and file.
+     * @param \Symfony\Component\Console\Input\InputInterface   $input
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param bool                                              $dont_affix_type
      */
     protected function executeGeneration(
         InputInterface $input,
@@ -158,10 +160,11 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * Print the generation results to the console window.
+     * Print the results of the generate operation to the console window.
      *
-     * @param OutputInterface $output
-     * @param string          $name The name prefix of the generated class.
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param string                                            $name
+     * @param bool                                              $dont_affix_type
      */
     protected function printResults(
         OutputInterface $output,

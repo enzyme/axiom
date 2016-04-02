@@ -16,14 +16,14 @@ class Manager
     /**
      * An instance of a parrot file wrapper.
      *
-     * @var Enzyme\Parrot\File
+     * @var \Enzyme\Parrot\File
      */
     protected $file_dispatch;
 
     /**
      * Create a new stub manager.
      *
-     * @param Enzyme\Parrot\File $file_dispatch A parrot file dispatch wrapper.
+     * @param \Enzyme\Parrot\File $file_dispatch
      */
     public function __construct(File $file_dispatch)
     {
