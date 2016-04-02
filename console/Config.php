@@ -23,13 +23,6 @@ class Config
     protected $file_dispatch;
 
     /**
-     * The local configuration store.
-     *
-     * @var array
-     */
-    protected $store;
-
-    /**
      * The parsed YAML configuration.
      *
      * @var array
@@ -46,7 +39,7 @@ class Config
     {
         $this->parser = $parser;
         $this->file_dispatch = $file_dispatch;
-        $this->store = [];
+        $this->config = [];
     }
 
     /**
