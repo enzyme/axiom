@@ -1,0 +1,23 @@
+<?php
+
+namespace %namespace%;
+
+use Enzyme\Axiom\Bags\BagInterface;
+
+class %name%Bag implements BagInterface
+{
+    public function get($key)
+    {
+        //
+    }
+
+    public function getAll()
+    {
+        //
+    }
+
+    public function has($key)
+    {
+        //
+    }
+}

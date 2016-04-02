@@ -1,0 +1,67 @@
+#!/usr/bin/env php
+<?php
+
+// A collection of locations where the composer autoload file may be present
+// relative to our current working directory.
+$autoload_locations = [
+    __DIR__.'/../autoload.php',
+    __DIR__.'/../../../autoload.php',
+    __DIR__.'/../vendor/autoload.php',
+];
+
+// A collection of locations where the axiom configuration file may be
+// present relative to our current working directory.
+$axiom_yaml_locations = [
+    __DIR__.'/../axiom.yaml',
+    __DIR__.'/../../axiom.yaml',
+    __DIR__.'/../../../../axiom.yaml',
+];
+
+// If we find a composer autoload file, set the location as a global constant,
+// otherwise fail and notify the user.
+foreach ($autoload_locations as $file) {
+    if (file_exists($file) === true) {
+        define('COMPOSER_AUTOLOAD_LOCATION', $file);
+        break;
+    }
+}
+if (false === defined('COMPOSER_AUTOLOAD_LOCATION')) {
+    throw new \Exception('Composer autoload.php could not be found.');
+}
+
+// If we find an axiom configuration file, set the location as a global
+// constant, otherwise silently continue on.
+foreach ($axiom_yaml_locations as $file) {
+    if (file_exists($file) === true) {
+        define('AXIOM_YAML_LOCATION', $file);
+        break;
+    }
+}
+if (false === defined('AXIOM_YAML_LOCATION')) {
+    define('AXIOM_YAML_LOCATION', '');
+}
+
+require_once COMPOSER_AUTOLOAD_LOCATION;
+
+use Enzyme\Parrot\File;
+use Enzyme\Axiom\Console\Config;
+use Enzyme\Axiom\Console\Commands;
+use Symfony\Component\Yaml\Parser;
+use Symfony\Component\Console\Application;
+use Enzyme\Axiom\Console\Stubs\Manager as StubManager;
+
+$parser = new Parser;
+$config = new Config($parser, new File);
+$stub_manager = new StubManager(new File);
+
+$config->parse(AXIOM_YAML_LOCATION);
+
+$application = new Application();
+$application->add(new Commands\MakeBagCommand($stub_manager, $config));
+$application->add(new Commands\MakeAtomCommand($stub_manager, $config));
+$application->add(new Commands\MakeModelCommand($stub_manager, $config));
+$application->add(new Commands\MakeStackCommand($stub_manager, $config));
+$application->add(new Commands\MakeReportCommand($stub_manager, $config));
+$application->add(new Commands\MakeFactoryCommand($stub_manager, $config));
+$application->add(new Commands\MakeRepositoryCommand($stub_manager, $config));
+$application->run();

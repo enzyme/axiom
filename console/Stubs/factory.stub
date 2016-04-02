@@ -1,0 +1,20 @@
+<?php
+
+namespace %namespace%;
+
+use Enzyme\Axiom\Bags\BagInterface;
+use Enzyme\Axiom\Models\ModelInterface;
+use Enzyme\Axiom\Factories\FactoryInterface;
+
+class %name%Factory implements FactoryInterface
+{
+    public function make(BagInterface $data)
+    {
+        //
+    }
+
+    public function update(ModelInterface $model, BagInterface $data)
+    {
+        //
+    }
+}
