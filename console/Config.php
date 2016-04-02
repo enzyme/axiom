@@ -11,14 +11,14 @@ class Config
     /**
      * Reference to the Symfony YAML parser.
      *
-     * @var Symfony\Component\Yaml\Parser
+     * @var \Symfony\Component\Yaml\Parser
      */
     protected $parser;
 
     /**
      * Reference to a parrot file wrapper.
      *
-     * @var Enzyme\Parrot\File
+     * @var \Enzyme\Parrot\File
      */
     protected $file_dispatch;
 
@@ -39,8 +39,8 @@ class Config
     /**
      * Create a new configuration manager.
      *
-     * @param Symfony\Component\Yaml\Parser $parser
-     * @param Enzyme\Parrot\File            $file_dispatch
+     * @param \Symfony\Component\Yaml\Parser $parser
+     * @param \Enzyme\Parrot\File            $file_dispatch
      */
     public function __construct(Parser $parser, File $file_dispatch)
     {
