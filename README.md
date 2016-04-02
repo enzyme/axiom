@@ -94,10 +94,14 @@ models:
 
 When generating a class using the command line tool and no entry for the class type is found in the `axiom.yaml` (optional) file or through the command line parameter, an exception will be thrown.
 
+#### Resource stack
+
+To create an entire resource stack, which includes a repository, factory, bag and model for a domain resource, you can use the `make:stack` command. This command does not accept namespaces and locations from the command line, so you will need a `axiom.yaml` file present. If you want to use the stack generator but want to ignore one or more of the included generated classes, you can use the `--ignore` parameter. Simply pass the `--ignore` parameter a string with a comma-delimited list of the resource types to ignore, eg: `--ignore="model"` or `--ignore="factory,bag"`.
+
 # Contributing
 
-Please see CONTRIBUTING.md
+Please see `CONTRIBUTING.md`
 
 # License
 
-MIT, see LICENSE
+MIT - Copyright (c) 2015 Tristan Strathearn, see `LICENSE`
