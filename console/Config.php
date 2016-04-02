@@ -39,8 +39,8 @@ class Config
     /**
      * Create a new configuration manager.
      *
-     * @param Parser $parser
-     * @param File   $file_dispatch
+     * @param Symfony\Component\Yaml\Parser $parser
+     * @param Enzyme\Parrot\File            $file_dispatch
      */
     public function __construct(Parser $parser, File $file_dispatch)
     {
@@ -104,7 +104,6 @@ class Config
     {
         $parts = explode('.', $path);
         $top = count($parts) - 1;
-        $current = $array;
         $index = 0;
 
         foreach ($array as $key => $value) {
@@ -123,7 +122,7 @@ class Config
                 $new_path = array_slice($parts, 1);
                 $new_path = implode('.', $new_path);
 
-                return $this->dotGet($value, $new_path, 1);
+                return $this->dotGet($value, $new_path);
             }
 
             // If we're currently sitting on a numerical key, let's dig in
@@ -131,7 +130,7 @@ class Config
             if (true === is_int($key)) {
                 // Keep our current path chain.
                 $new_path = implode('.', $parts);
-                $hit = $this->dotGet($value, $new_path, 1);
+                $hit = $this->dotGet($value, $new_path);
 
                 // If we found a match futher down the rabbit hole, let's
                 // return that value here, otherwise let's do another iteration.
