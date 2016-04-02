@@ -5,6 +5,7 @@
 // relative to our current working directory.
 $autoload_locations = [
     __DIR__.'/../autoload.php',
+    __DIR__.'/../../../autoload.php',
     __DIR__.'/../vendor/autoload.php',
 ];
 
@@ -13,6 +14,7 @@ $autoload_locations = [
 $axiom_yaml_locations = [
     __DIR__.'/../axiom.yaml',
     __DIR__.'/../../axiom.yaml',
+    __DIR__.'/../../../../axiom.yaml',
 ];
 
 // If we find a composer autoload file, set the location as a global constant,
