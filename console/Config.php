@@ -3,7 +3,6 @@
 namespace Enzyme\Axiom\Console;
 
 use Enzyme\Parrot\File;
-use InvalidArgumentException;
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Yaml\Exception\ParseException;
 

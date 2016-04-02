@@ -3,7 +3,6 @@
 namespace Enzyme\Axiom\Console\Stubs;
 
 use Enzyme\Parrot\File;
-use InvalidArgumentException;
 
 class Manager
 {

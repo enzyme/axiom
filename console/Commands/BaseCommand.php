@@ -2,7 +2,6 @@
 
 namespace Enzyme\Axiom\Console\Commands;
 
-use Exception;
 use ICanBoogie\Inflector;
 use Enzyme\Axiom\Console\Config;
 use Symfony\Component\Console\Command\Command;
