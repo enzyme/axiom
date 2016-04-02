@@ -46,6 +46,8 @@ class Config
      * Parse the given YAML file.
      *
      * @param string $file The path to the file.
+     *
+     * @throws Exception If the YAML file cannot be parsed.
      */
     public function parse($file)
     {

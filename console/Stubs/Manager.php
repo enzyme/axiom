@@ -32,12 +32,14 @@ class Manager
     }
 
     /**
-     * Get the contents for the provided stub. Will throw an
-     * \InvalidArgumentException if the stub by the given name does not exist.
+     * Get the contents for the provided stub.
      *
      * @param string $stub
      *
      * @return string
+     *
+     * @throws InvalidArgumentException If the stub by the given name does not
+     * exist in the `console/Stubs` folder using the format `{name}.stub`.
      */
     public function get($stub)
     {

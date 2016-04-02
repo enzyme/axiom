@@ -95,6 +95,9 @@ abstract class BaseCommand extends Command
 
     /**
      * {@inheritDoc}
+     *
+     * @throws Exception If there is no namespace or location defined for the
+     * class type(s) being generated.
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
