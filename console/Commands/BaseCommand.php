@@ -176,7 +176,7 @@ abstract class BaseCommand extends Command
 
         $class = $dont_affix_type === true
             ? $name
-            : $name.$uc_type;
+            : $name . $uc_type;
 
         if (true === $output->isVerbose()) {
             $output->writeln("<comment>    Namespace -> {$this->namespace}</comment>");

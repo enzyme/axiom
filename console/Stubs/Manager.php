@@ -41,7 +41,7 @@ class Manager
      */
     public function get($stub)
     {
-        $file = $this->stubs_dir.$stub.'.stub';
+        $file = $this->stubs_dir . $stub . '.stub';
 
         if (false === $this->file_dispatch->exists($file)) {
             throw new InvalidArgumentException(
@@ -64,7 +64,7 @@ class Manager
     public function hydrate($contents, array $data)
     {
         foreach ($data as $key => $value) {
-            $contents = str_replace('%'.$key.'%', $value, $contents);
+            $contents = str_replace('%' . $key . '%', $value, $contents);
         }
 
         return $contents;
