@@ -34,12 +34,27 @@ abstract class BaseCommand extends Command
      */
     protected $location;
 
+    /**
+     * The global configuration manager.
+     *
+     * @var Enzyme\Axiom\Console\Config
+     */
+    protected $config;
+
+    /**
+     * Instantiate a new command.
+     *
+     * @param Enzyme\Axiom\Console\Stubs\Manager $stub_manager
+     * @param Enzyme\Axiom\Console\Config        $config
+     */
     public function __construct(StubManager $stub_manager, Config $config)
     {
         parent::__construct();
 
         $this->stub_manager = $stub_manager;
         $this->config = $config;
+        $this->location = null;
+        $this->namespace = null;
     }
 
     /**

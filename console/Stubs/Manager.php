@@ -23,7 +23,7 @@ class Manager
     /**
      * Create a new stub manager.
      *
-     * @param File $file_dispatch A parrot file dispatch wrapper.
+     * @param Enzyme\Parrot\File $file_dispatch A parrot file dispatch wrapper.
      */
     public function __construct(File $file_dispatch)
     {
