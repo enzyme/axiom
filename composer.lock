@@ -4,9 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef1cf304178498a5fb0aca153549fa6e",
-    "content-hash": "aca80bb792a4c3632e788b8f04c69db7",
+    "hash": "245edbefbdf410efa26b624440d157b0",
+    "content-hash": "b4dceb7f4f8369c20587b86ff1a91cc5",
     "packages": [
+        {
+            "name": "enzyme/freckle",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/enzyme/freckle.git",
+                "reference": "c4782eada4217349a26da2ec277717437a92e39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/enzyme/freckle/zipball/c4782eada4217349a26da2ec277717437a92e39b",
+                "reference": "c4782eada4217349a26da2ec277717437a92e39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8",
+                "satooshi/php-coveralls": "^0.6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Enzyme\\Freckle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tristan Strathearn",
+                    "email": "r3oath@gmail.com",
+                    "homepage": "https://github.com/r3oath",
+                    "role": "Senior Web Developer"
+                }
+            ],
+            "description": "A collection of dot-based information retrieval helpers... wuh?",
+            "homepage": "https://github.com/enzyme/freckle",
+            "keywords": [
+                "collections",
+                "dot",
+                "enzyme",
+                "freckle",
+                "information",
+                "path",
+                "retrieval"
+            ],
+            "time": "2016-04-03 05:46:18"
+        },
         {
             "name": "enzyme/parrot",
             "version": "v0.0.1",
