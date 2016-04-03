@@ -44,6 +44,7 @@ if (false === defined('AXIOM_YAML_LOCATION')) {
 require_once COMPOSER_AUTOLOAD_LOCATION;
 
 use Enzyme\Parrot\File;
+use Enzyme\Freckle\Dot;
 use Enzyme\Axiom\Console\Config;
 use Enzyme\Axiom\Console\Commands;
 use Symfony\Component\Yaml\Parser;
@@ -51,7 +52,7 @@ use Symfony\Component\Console\Application;
 use Enzyme\Axiom\Console\Stubs\Manager as StubManager;
 
 $parser = new Parser;
-$config = new Config($parser, new File);
+$config = new Config($parser, new File, new Dot);
 $stub_manager = new StubManager(new File);
 
 $config->parse(AXIOM_YAML_LOCATION);

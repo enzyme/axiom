@@ -1,6 +1,7 @@
 <?php
 
 use Mockery as m;
+use Enzyme\Freckle\Dot;
 use Enzyme\Axiom\Console\Config;
 use Symfony\Component\Yaml\Parser;
 
@@ -25,7 +26,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
             }
         );
 
-        $config = new Config(new Parser, $file_dispatch);
+        $config = new Config(new Parser, $file_dispatch, new Dot);
         $config->parse($file);
     }
 
@@ -51,7 +52,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
             }
         );
 
-        $config = new Config(new Parser, $file_dispatch);
+        $config = new Config(new Parser, $file_dispatch, new Dot);
         $config->parse($file);
         $expected = '~/Code/Acme/src/Repos';
         $actual = $config->get('repositories.location');
@@ -89,7 +90,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
             }
         );
 
-        $config = new Config($parser, $file_dispatch);
+        $config = new Config($parser, $file_dispatch, new Dot);
         $config->parse($file);
     }
 }
