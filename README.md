@@ -59,7 +59,7 @@ There are a couple concrete classes included with Axiom that you can use straigh
 
 Axiom comes with a set of command line generators for quickly creating skeleton implementations of the various interfaces included.
 
-To use the command like tool, run it from the console at the root of your project as:
+To use the command line tool, run it from the console at the root of your project as:
 
 ```bash
 php vendor/bin/axiom list
